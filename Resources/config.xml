@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.2/engine/Shopware/Components/Plugin/schema/config.xsd">
+	<elements>
+		<element type="boolean" required="true" scope="shop">
+			<name>nnwebSmartsuppLiveChat_active</name>
+			<label lang="de">Aktivieren:</label>
+			<label lang="en">Activate:</label>
+			<value>true</value>
+		</element>
+		<element type="text" required="true" scope="shop">
+			<name>nnwebSmartsuppLiveChat_key</name>
+			<label lang="de">Smartsupp-Schlüssel:</label>
+			<label lang="en">Smartsupp-Code:</label>
+			<value></value>
+			<description lang="de">Ihren persönlichen Smartsupp-Schlüssel finden Sie in Ihrem Smartsupp-Dashboard unter Einstellungen -> Chat Box. Dort befindet sich oben ein Reiter "Live-Chat Code". Am Ende der Seite finden Sie nun Ihren persönlichen 40-stelligen Schlüssel.</description>
+			<description lang="en">Your personal Smartsupp key can be found in your Smartsupp dashboard under Settings -> Chat Box. There is a tab "Live Chat Code". At the end of the page you will find your personal 40-digit key.</description>
+		</element>
+		<element type="select" required="true" scope="shop">
+			<name>nnwebSmartsuppLiveChat_customerData</name>
+			<label lang="de">Kunden-Daten an Smartsupp übertragen:</label>
+			<label lang="en">Transfer customer data to Smartsupp:</label>
+			<value>ja</value>
+			<description lang="de">Im Smartsupp-Chat können Sie sich Name, E-Mail, Kundennummer, sowie Kundengruppe des Kunden anzeigen lassen.</description>
+			<description lang="en">Smartsupp Chat allows you to view the name, e-mail, customer number and customer group of the customer.</description>
+			<store>
+				<option>
+					<value>ja</value>
+					<label lang="DE">ja</label>
+					<label lang="EN">yes</label>
+				</option>
+				<option>
+					<value>nein</value>
+					<label lang="DE">nein</label>
+					<label lang="EN">no</label>
+				</option>
+			</store>
+		</element>
+	</elements>
+</config>
