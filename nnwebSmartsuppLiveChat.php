@@ -6,6 +6,7 @@ use Shopware\Components\Plugin\Context\ActivateContext;
 use Shopware\Components\Plugin\Context\DeactivateContext;
 use Shopware\Components\Plugin\Context\InstallContext;
 use Shopware\Components\Plugin\Context\UpdateContext;
+use Shopware\Models\Shop\Shop;
 
 class nnwebSmartsuppLiveChat extends \Shopware\Components\Plugin {
 
@@ -31,9 +32,19 @@ class nnwebSmartsuppLiveChat extends \Shopware\Components\Plugin {
 	}
 
 	public function onFrontendPostDispatch(\Enlight_Controller_ActionEventArgs $args) {
-		$config = $this->container->get('shopware.plugin.cached_config_reader')->getByPluginName($this->getName());
-		if (!$config["nnwebSmartsuppLiveChat_active"])
-			return;
+        $shop = false;
+        if ($this->container->initialized('shop')) {
+            $shop = $this->container->get('shop');
+        }
+
+        if (!$shop) {
+            $shop = $this->container->get('models')->getRepository(Shop::class)->getActiveDefault();
+        }
+
+        $config = $this->container->get('shopware.plugin.cached_config_reader')->getByPluginName($this->getName(), $shop);
+        if (!(bool) $config['nnwebSmartsuppLiveChat_active']) {
+            return;
+        }
 		
 		$controller = $args->get('subject');
 		$view = $controller->View();
@@ -41,9 +52,6 @@ class nnwebSmartsuppLiveChat extends \Shopware\Components\Plugin {
 		$view->assign('smartsuppKey', $config["nnwebSmartsuppLiveChat_key"]);
 		
 		$this->container->get('template')->addTemplateDir($this->getPath() . '/Resources/views/');
-		
-		$controller = $args->get('subject');
-		$view = $controller->View();
 		
 		// User Status
 		$userLoggedIn = Shopware()->Modules()->Admin()->sCheckUser();

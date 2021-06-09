@@ -3,7 +3,7 @@
     <label lang="de">Smartsupp Live Chat</label>
     <label lang="en">Smartsupp Live Chat</label>
 
-    <version>1.2.0</version>
+    <version>1.2.1</version>
     <copyright>Copyright (c) 2021, Netzhirsch GbR</copyright>
     <link>https://www.netzhirsch.de</link>
     <author>Netzhirsch GbR</author>
@@ -45,6 +45,11 @@ For more information about Smartsupp, please visit https://www.smartsupp.com/en/
 
     <changelog version="1.2.0">
         <changes lang="de">Kompatibilität zu Shopware 5.7.0 hergestellt. Außerdem kann das Plugin nun pro Sub-Shop aktiviert werden.</changes>
-        <changes lang="en">Compatibility with Shopware 5.5.0 made. In addition, the plugin can now be activated for each sub-shop.</changes>
+        <changes lang="en">Compatibility with Shopware 5.7.0 made. In addition, the plugin can now be activated for each sub-shop.</changes>
+    </changelog>
+
+    <changelog version="1.2.1">
+        <changes lang="de">Bugfix für die Subshop-Funktionalität.</changes>
+        <changes lang="en">Bugfix for the subshop functionality.</changes>
     </changelog>
 </plugin>
