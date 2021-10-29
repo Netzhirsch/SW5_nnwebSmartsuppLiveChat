@@ -9,6 +9,16 @@
 		<script type="text/javascript">
 			var _smartsupp = _smartsupp || {};
 			_smartsupp.key = '{/literal}{$smartsuppKey|escapeHtml|truncate:40}{literal}';
+			_smartsupp.orientation = '{/literal}{$smartsuppChatBoxPosition|escapeHtml}{literal}';
+			{/literal}{if $smartsuppHideMobileWidget == "ja"}{literal}
+				_smartsupp.hideMobileWidget = true;
+			{/literal}{/if}{literal}
+			{/literal}{if !empty($smartsuppOffsetX)}{literal}
+				_smartsupp.offsetX = '{/literal}{$smartsuppOffsetX|escapeHtml}{literal}';
+			{/literal}{/if}{literal}
+			{/literal}{if !empty($smartsuppOffsetY)}{literal}
+				_smartsupp.offsetY = '{/literal}{$smartsuppOffsetY|escapeHtml}{literal}';
+			{/literal}{/if}{literal}
 			window.smartsupp||(function(d) {
 				var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
 				s=d.getElementsByTagName('script')[0];c=d.createElement('script');

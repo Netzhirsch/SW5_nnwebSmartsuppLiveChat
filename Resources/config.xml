@@ -36,5 +36,57 @@
 				</option>
 			</store>
 		</element>
+		<element type="select" required="true" scope="shop">
+			<name>nnwebSmartsuppLiveChat_hideMobileWidget</name>
+			<label lang="de">Chatbox auf Mobilgeräten ausblenden:</label>
+			<label lang="en">Hide chat box on mobile devices:</label>
+			<value>nein</value>
+			<store>
+				<option>
+					<value>ja</value>
+					<label lang="DE">ja</label>
+					<label lang="EN">yes</label>
+				</option>
+				<option>
+					<value>nein</value>
+					<label lang="DE">nein</label>
+					<label lang="EN">no</label>
+				</option>
+			</store>
+		</element>
+		<element type="select" required="true" scope="shop">
+			<name>nnwebSmartsuppLiveChat_chatBoxPosition</name>
+			<label lang="de">Position der Chatbox:</label>
+			<label lang="en">Chat box position:</label>
+			<value>left</value>
+			<store>
+				<option>
+					<value>left</value>
+					<label lang="DE">links</label>
+					<label lang="EN">left</label>
+				</option>
+				<option>
+					<value>right</value>
+					<label lang="DE">rechts</label>
+					<label lang="EN">right</label>
+				</option>
+			</store>
+		</element>
+		<element type="number" required="false" scope="shop">
+			<name>nnwebSmartsuppLiveChat_offsetX</name>
+			<label lang="de">Offset X:</label>
+			<label lang="en">Offset X:</label>
+			<value></value>
+			<description lang="de">Abstand zum rechten bzw. linken Rand in Pixeln. Dieser Wert ist optional.</description>
+			<description lang="en">Distance to the right or left edge in pixels. This value is optional.</description>
+		</element>
+		<element type="number" required="false" scope="shop">
+			<name>nnwebSmartsuppLiveChat_offsetY</name>
+			<label lang="de">Offset Y:</label>
+			<label lang="en">Offset Y:</label>
+			<value></value>
+			<description lang="de">Abstand zum unteren Rand in Pixeln. Dieser Wert ist optional.</description>
+			<description lang="en">Distance to the bottom edge in pixels. This value is optional.</description>
+		</element>
 	</elements>
 </config>

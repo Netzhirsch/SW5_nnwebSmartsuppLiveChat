@@ -50,7 +50,11 @@ class nnwebSmartsuppLiveChat extends \Shopware\Components\Plugin {
 		$view = $controller->View();
 		
 		$view->assign('smartsuppKey', $config["nnwebSmartsuppLiveChat_key"]);
-		
+		$view->assign('smartsuppHideMobileWidget', $config["nnwebSmartsuppLiveChat_hideMobileWidget"]);
+		$view->assign('smartsuppChatBoxPosition', $config["nnwebSmartsuppLiveChat_chatBoxPosition"]);
+		$view->assign('smartsuppOffsetX', $config["nnwebSmartsuppLiveChat_offsetX"]);
+		$view->assign('smartsuppOffsetY', $config["nnwebSmartsuppLiveChat_offsetY"]);
+
 		$this->container->get('template')->addTemplateDir($this->getPath() . '/Resources/views/');
 		
 		// User Status
@@ -76,11 +80,5 @@ class nnwebSmartsuppLiveChat extends \Shopware\Components\Plugin {
 		$amount = empty($amount) ? 0 : $amount["totalAmount"];
 		
 		$view->assign('smartsuppBasketAmount', $amount);
-	}
-
-	private function getInvalidateCache() {
-		return [
-			'frontend' 
-		];
 	}
 }
